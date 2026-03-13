@@ -1,0 +1,78 @@
+/* =========================================================
+ * 公用（全局）样式
+ * - 只放“跨页面/跨组件都通用”的基础规则
+ * - 组件/页面自己的样式请写回各自 .vue 的 <style scoped>
+ * ========================================================= */
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0b1020;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #070a14;
+  }
+}
+
+/* =========================================================
+ * 公用（全局）样式：所有页面共享
+ * - 字体与渲染
+ * - body / #app 的基础布局
+ * ========================================================= */
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 页面级背景（不属于某个具体页面组件） */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0b1020;
+}
+
+/* Vue 挂载点：保证内容居中且顶部对齐 */
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #070a14;
+  }
+}
+
