@@ -44,8 +44,15 @@ async function scrollToBottom() {
   el.scrollTop = el.scrollHeight;
 }
 
-// 暴露给父组件：App.vue 可以通过 ref 调用 messagesView.scrollToBottom()
-defineExpose({ scrollToBottom });
+// 同步贴底滚动：不等 nextTick，用于流式高频更新时更稳（会尽力贴底）
+function scrollToBottomNow() {
+  const el = containerEl.value; // 取到滚动容器 DOM
+  if (!el) return; // 没有 DOM 就不处理
+  el.scrollTop = el.scrollHeight; // 直接把 scrollTop 拉到最底
+}
+
+// 暴露给父组件：App.vue 可以通过 ref 调用 messagesView.scrollToBottom()/scrollToBottomNow()
+defineExpose({ scrollToBottom, scrollToBottomNow });
 
 function toolCallsForMessage(m) {
   // 根据 message.id 取出对应工具调用；没有就返回 null
